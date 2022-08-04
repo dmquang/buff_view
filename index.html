@@ -4,45 +4,6 @@ import time
 import os
 from datetime import date
 from pystyle import *
-def cre_mã():
-    số_kí_tự_in_chuỗi = 8
-    kí_tự_số = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']  
-    kí_tự_chữ = ['A', 'B', 'Y',
-                        'Z']
-    set_chuỗi = kí_tự_số + kí_tự_chữ
-    random_số = random.choice(kí_tự_số)
-    random_chữ = random.choice(kí_tự_chữ)
-    ghép = random_số + random_chữ
-    for x in range(số_kí_tự_in_chuỗi):
-        ghép = ghép + random.choice(set_chuỗi)
-        import array
-        ghép_list = array.array('u', ghép)
-        random.shuffle(ghép_list)
-    password = "DarlingCoder-"
-    for x in ghép_list:
-            password = password + x
-    return password
-try:
-    f = open('Mã_Máy.txt', 'r')
-    filea= f.readline()
-except:
-    import os
-
-    filea=open(f'Mã_Máy.txt', "w+")
-    mã_máy=cre_mã()
-    filea.write(mã_máy)
-
-    filea.close()
-f = open('Mã_Máy.txt', 'r')
-filea= f.readline()
-checkkey = requests.get('https://mquangkey208.blogspot.com/').text
-
-if filea in checkkey:
-    print('SUCCES!')
-else:
-    print(f'\033[1;31mMã Thiết Bị Của Bạn LÀ {filea} Vui Lòng Sao Chép Mã Và Liên Hệ Admin Qua Zalo: 0372760208 Để Kích Hoạt Tool !')
-    time.sleep(10000)
-    quit()
 
 os.system('cls')
 __AUTHOR__ = 'DARLING'
